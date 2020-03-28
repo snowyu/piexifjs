@@ -546,7 +546,7 @@ export const dictToBytes = (
       if (e instanceof exceptions.ValueConvertError) {
         const _ifdName = ["0th", "1st"].includes(ifdName) ? "Image" : ifdName;
         const tagName = Tags[_ifdName][key]["name"];
-        const errorMessage = `Can't convert ${tagName} in ${ifdName} IFD.\r`;
+        const errorMessage = `Can't convert ${tagName} in ${ifdName} IFD.\r\n`;
         e.message = errorMessage + e.message;
       }
       throw e;
