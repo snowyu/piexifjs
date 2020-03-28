@@ -43,6 +43,7 @@
   },
   "homepage": "https://github.com/hMatoba/piexifjs",
   "devDependencies": {
+    "@types/node": "^13.9.0",
     "@typescript-eslint/eslint-plugin": "^2.4.0",
     "@typescript-eslint/parser": "^2.4.0",
     "eslint": "^6.5.1",
