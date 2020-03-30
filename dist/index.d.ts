@@ -1,5 +1,5 @@
 export { Types, IExif, IExifElement } from "./interfaces";
-export { TagValues } from "./constants";
+export { Tags as ExifTags, TagValues } from "./constants";
 export { GPSHelper } from "./helper";
 export { ValueConvertError } from "./exceptions";
 import { IExif } from "./interfaces";

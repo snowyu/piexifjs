@@ -2481,6 +2481,7 @@
   exports.load = load;
   exports.dump = dump;
   exports.Types = Types;
+  exports.ExifTags = Tags;
   exports.TagValues = TagValues;
   exports.GPSHelper = GPSHelper;
   exports.ValueConvertError = ValueConvertError;
