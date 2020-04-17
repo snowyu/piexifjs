@@ -436,7 +436,14 @@ export const _toRational = (
 };
 
 export const _toUndefined = (rawValue: string, offset: number): ITagBinary => {
-  if (typeof rawValue !== "string") {
+  if (typeof rawValue === 'number') {
+    if (Number.isSafeInteger(rawValue)) {
+      return _toLong(rawValue, offset);
+    } else {
+      // TODO: howto express the max long number and check, bigInt?
+      return _toRational([Math.trunc(Math.abs(rawValue * 100)), 100], offset);
+    }
+  } else if (typeof rawValue !== "string") {
     const t = Array.isArray(rawValue) ? "Array" : typeof rawValue;
     throw new exceptions.ValueConvertError(
       `Value must be "string". Got "${t}".`
