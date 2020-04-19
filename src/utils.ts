@@ -629,6 +629,13 @@ export class ExifReader {
         value
       };
       if (tag in Tags[t]) {
+        if (valueSet.type !== Tags[t][tag].type) {
+          // should warning this?
+          if (Tags[t][tag].type === Types.Undefined) {
+            // TODO: force undefined for piexif can not remember the exif type.
+            valueSet.type = Types.Undefined;
+          }
+        }
         ifdObj[tag] = this.convertValue(valueSet);
       }
     }
